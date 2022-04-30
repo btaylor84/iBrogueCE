@@ -8,9 +8,6 @@
 
 import Foundation
 
-let skviewPort = SKViewPort()
-let brogueViewController = BrogueViewController()
-
 typealias Short = UInt16
 
 func plotChar(inputChar: displayGlyph,
@@ -38,7 +35,7 @@ func plotChar(inputChar: displayGlyph,
         glyphCode = glyphToUnicode(inputChar)
     }
     
-    skviewPort!.setCell(x:xLoc, y:yLoc, code:glyphCode, bgColor:backColor ,fgColor:foreColor);
+    brogueViewController.skViewPort!.setCell(x:xLoc, y:yLoc, code:glyphCode, bgColor:backColor ,fgColor:foreColor);
     
 }
 

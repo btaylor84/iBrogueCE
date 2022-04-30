@@ -9,10 +9,20 @@
 import SwiftUI
 import SpriteKit
 
-let rogueScene = RogueScene()
+let brogueViewController = BrogueViewController()
+
 struct BrogueView: View {
+
+    var scene: SKScene {
+        let rect = UIScreen.main.bounds
+        let scale = UIScreen.main.scale
+        let scene = RogueScene(size: CGSize(width: rect.size.width * scale, height: rect.size.height * scale), rows: 34, cols: 100)
+        scene.scaleMode = .fill
+        return scene
+    }
+    
     var body: some View {
-        SpriteView
+        SpriteView(scene: scene)
     }
 }
 

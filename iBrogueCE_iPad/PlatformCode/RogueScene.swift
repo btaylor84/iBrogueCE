@@ -20,6 +20,7 @@
 
 
 import SpriteKit
+import SwiftUI
 
 // copied from Platform.h and adapted to Swift style constants
 // for use in defining the GlyphType enum
@@ -88,12 +89,15 @@ class RogueScene: SKScene {
         gridSize = CGSize(rows: rows, cols: cols)
         cellSize = CGSize(width: CGFloat(size.width) / CGFloat(cols), height: CGFloat(size.height) / CGFloat(rows))
         super.init(size: size)
-        
-        if #available(iOS 10.0, *) {}
-        else {
-            sceneDidLoad()
+        sceneDidLoad()
         }
+
+    required init?(coder aDecoder: NSCoder) {
+        gridSize = CGSize(rows: 30, cols: 100)          // dummy statements, temporary
+        cellSize = CGSize(width: 10, height: 10)        // dummy statements, temporary
+        super.init(coder: aDecoder)
     }
+
 }
 
 extension RogueScene {

@@ -21,7 +21,26 @@
 //import UIKit
 import SpriteKit
 
-
+enum BrogueGameEvent: Int {
+    case    actionMenuOpen = 0,
+            actionMenuClose,
+            keyBoardInputRequired,
+            waitingForConfirmation,
+            confirmationComplete,
+            openedInventory,
+            closedInventory,
+            inventoryItemAction,
+            showTitle,
+            startNewGame,
+            openGame,
+            beginOpenGame,
+            openGameFinished,
+            playRecording,
+            showHighScores,
+            playBackPanic,
+            messagePlayerHasDied,
+            playerHasDiedMessageAcknowledged
+};
 
 fileprivate let kESCKey = "\u{1B}"    // 27
 fileprivate let kDelKey = "\u{B1}"    // 177
@@ -129,7 +148,7 @@ final class BrogueViewController: UIViewController {
    
     @IBOutlet weak var dContainerView: UIView!
     @objc var seedKeyDown = false
-    @objc var lastBrogueGameEvent: BrogueGameEvent = .showTitle {
+    var lastBrogueGameEvent: BrogueGameEvent = .showTitle {
         didSet {
             DispatchQueue.main.async {
                 //default visibility
