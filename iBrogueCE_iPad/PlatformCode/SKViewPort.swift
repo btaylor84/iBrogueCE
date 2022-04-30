@@ -23,6 +23,7 @@ import SpriteKit
 
 class SKViewPort: SKView {  
     var rogueScene: RogueScene!
+    var brogueViewController: UIViewController!
     
     required init?(coder aDecoder: NSCoder) {
         let rect = UIScreen.main.bounds

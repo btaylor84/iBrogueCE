@@ -185,8 +185,10 @@ final class BrogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: clean this up
-        RogueDriver.sharedInstance(with: skViewPort, viewController: self)
-
+        //RogueDriver.sharedInstance(with: skViewPort, viewController: self)
+        
+        skViewPort.brogueViewController = self
+        
         let thread = Thread(target: self, selector: #selector(BrogueViewController.playBrogue), object: nil)
         thread.stackSize = 400 * 8192
         thread.start()

@@ -44,8 +44,7 @@ extern "C" {
 
 static CGColorSpaceRef _colorSpace;
 // quick and easy bridge for C/C++ code. Could be cleaned up.
-static SKViewPort *skviewPort;
-static BrogueViewController *brogueViewController;
+
 
 @implementation RogueDriver 
 
@@ -256,7 +255,7 @@ enum graphicsModes _setGraphicsMode(enum graphicsModes newMode) {
 }
 
 
-
+// These globals are used by the C code
 boolean hasGraphics = true;
 boolean serverMode = false;
 boolean keyboardPresent = false;            // no keyboard until key pressed, set in nextKeyOrMouseEvent()
