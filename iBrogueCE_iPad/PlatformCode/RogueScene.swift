@@ -63,8 +63,8 @@ extension CGSize {
     }
 }
 
-// To see Swift classes from ObjC they MUST be prefaced with @objc and be public/open
-@objc public class RogueScene: SKScene {
+
+class RogueScene: SKScene {
     fileprivate let gridSize: CGSize
     fileprivate let cellSize: CGSize
     
@@ -93,10 +93,6 @@ extension CGSize {
         else {
             sceneDidLoad()
         }
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

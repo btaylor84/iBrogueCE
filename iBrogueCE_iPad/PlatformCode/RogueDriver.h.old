@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, BrogueGameEvent) {
 @class SKViewPort;
 @interface RogueDriver : NSObject
 
-+ (id)sharedInstanceWithViewPort:(SKViewPort *)viewPort viewController:(UIViewController *)viewController;
+// + (id)sharedInstanceWithViewPort:(SKViewPort *)viewPort viewController:(UIViewController *)viewController;
 + (unsigned long)rogueSeed;
 
 @end
